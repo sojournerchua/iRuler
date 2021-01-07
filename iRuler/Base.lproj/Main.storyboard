@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lsk-4q-qNf">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="LwY-fH-ZI6">
+            <objects>
+                <viewController id="lsk-4q-qNf" customClass="ViewController" customModule="iRuler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nGS-4Z-6VX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86T-gQ-xZn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aYq-G4-yZH" appends="YES" id="1NR-lR-D0c"/>
+                                </connections>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBH-wX-wLW">
+                                <rect key="frame" x="152" y="560" width="70" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Ylf-8x-WTj"/>
+                                    <constraint firstAttribute="height" constant="40" id="x4s-t8-n1a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="select"/>
+                                <connections>
+                                    <action selector="selectButton:" destination="lsk-4q-qNf" eventType="touchUpInside" id="zed-jc-H0W"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hQF-Oj-fAy">
+                                <rect key="frame" x="16" y="616" width="119" height="32"/>
+                                <segments>
+                                    <segment title="cm"/>
+                                    <segment title="inches"/>
+                                </segments>
+                                <connections>
+                                    <action selector="unitSelect:" destination="lsk-4q-qNf" eventType="valueChanged" id="ISC-tR-ZpW"/>
+                                </connections>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Tap select to start measuring!" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ym5-jk-P1a">
+                                <rect key="frame" x="45" y="26" width="284" height="38"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Hbb-m4-XOp"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="crosshair2.png" translatesAutoresizingMaskIntoConstraints="NO" id="DxX-0L-aoq">
+                                <rect key="frame" x="147" y="293" width="81" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="Q8t-3i-k8d"/>
+                                    <constraint firstAttribute="width" constant="81" id="q1S-1z-SoR"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="bottom" secondItem="wBH-wX-wLW" secondAttribute="bottom" constant="67" id="32n-8K-16P"/>
+                            <constraint firstItem="wBH-wX-wLW" firstAttribute="leading" secondItem="a7y-xQ-MGm" secondAttribute="leading" constant="152" id="3WJ-GF-0Lp"/>
+                            <constraint firstItem="86T-gQ-xZn" firstAttribute="top" secondItem="a7y-xQ-MGm" secondAttribute="top" id="4a6-OE-0Qv"/>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="trailing" secondItem="wBH-wX-wLW" secondAttribute="trailing" constant="153" id="G4y-a0-uWL"/>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="trailing" secondItem="ym5-jk-P1a" secondAttribute="trailing" constant="46" id="UvX-5H-PEf"/>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="trailing" secondItem="DxX-0L-aoq" secondAttribute="trailing" constant="147" id="VUT-C6-MGd"/>
+                            <constraint firstItem="hQF-Oj-fAy" firstAttribute="leading" secondItem="a7y-xQ-MGm" secondAttribute="leading" constant="16" id="XUR-Vx-vb3"/>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="bottom" secondItem="hQF-Oj-fAy" secondAttribute="bottom" constant="20" id="Z7r-T3-F0f"/>
+                            <constraint firstItem="ym5-jk-P1a" firstAttribute="leading" secondItem="a7y-xQ-MGm" secondAttribute="leading" constant="45" id="ZVR-mg-eqC"/>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="trailing" secondItem="DxX-0L-aoq" secondAttribute="trailing" constant="147" id="c2R-Qv-81q"/>
+                            <constraint firstItem="86T-gQ-xZn" firstAttribute="leading" secondItem="a7y-xQ-MGm" secondAttribute="leading" id="gNw-SJ-EVN"/>
+                            <constraint firstItem="86T-gQ-xZn" firstAttribute="bottom" secondItem="a7y-xQ-MGm" secondAttribute="bottom" id="pWY-Fy-DqF"/>
+                            <constraint firstItem="86T-gQ-xZn" firstAttribute="trailing" secondItem="a7y-xQ-MGm" secondAttribute="trailing" id="rgc-VM-XwL"/>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="trailing" secondItem="DxX-0L-aoq" secondAttribute="trailing" constant="147" id="rsg-IW-lVu"/>
+                            <constraint firstItem="ym5-jk-P1a" firstAttribute="top" secondItem="a7y-xQ-MGm" secondAttribute="top" constant="26" id="uuZ-hT-UGh"/>
+                            <constraint firstItem="a7y-xQ-MGm" firstAttribute="bottom" secondItem="DxX-0L-aoq" secondAttribute="bottom" constant="293" id="zAX-b2-5Cy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a7y-xQ-MGm"/>
+                    </view>
+                    <connections>
+                        <outlet property="distanceLabel" destination="ym5-jk-P1a" id="mw8-1G-2vw"/>
+                        <outlet property="sceneView" destination="86T-gQ-xZn" id="sVZ-ye-xjU"/>
+                        <outlet property="selectButton" destination="wBH-wX-wLW" id="PRa-N5-tb4"/>
+                        <outlet property="unitSelect" destination="hQF-Oj-fAy" id="Fqu-A6-ns8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iD5-Ne-iIc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aYq-G4-yZH"/>
+            </objects>
+            <point key="canvasLocation" x="-199.19999999999999" y="-140.77961019490255"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="crosshair2.png" width="300" height="300"/>
+    </resources>
+</document>
